@@ -17,7 +17,7 @@ public class tests {
 
 	@BeforeSuite
 	public void startBrowser() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Gleb\\IdeaProjects\\HT1\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.SECONDS);
@@ -25,7 +25,7 @@ public class tests {
 		driver.get("http://localhost:8080");
 
 		mainPage = PageFactory.initElements(driver, LoginPage.class)
-				.login("diana.solovets@gmail.com", "Bastard85");
+				.login("test_user", "123456");
 	}
 
 	@BeforeMethod
